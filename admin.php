@@ -2,17 +2,17 @@
 require "koneksi.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nik = $_POST['nik'];
+    $id_petugas = $_POST['id_petugas'];
     $username = $_POST['username'];
     $password = md5($_POST['password']);
     
-    $sql = "SELECT*FROM masyarakat WHERE nik = ? AND username = ? AND password = ?";
-    $row = $koneksi -> execute_query($sql, [$nik, $username, $password]);
+    $sql = "SELECT*FROM petugas WHERE id_petugas = ? AND username = ? AND password = ?";
+    $row = $koneksi -> execute_query($sql, [$id_petugas, $username, $password]);
     
     if (mysqli_num_rows($row) ==  1) {
         session_start();
-        $_SESSION['nik'] = $nik;
-        header("location:index.php");
+        $_SESSION['id_petugas'] = $id_petugas;
+        header("location:index1.php");
     } else {
         echo"<script>alert('Gagal Login!')</script>";
     }
@@ -24,15 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 
 <head>
-    <title>login</title>
+    <title>login admin</title>
 </head>
 
 <body>
     <form action=""method="post" class="form-login">
-    <p>Silahkan Login</p>
+    <p>Login admin</p>
     <div class="form-item">
-        <label for="nik">nik</label>
-        <input type="text"name="nik" id="nik" required>
+        <label for="id_petugas">id</label>
+        <input type="text"name="id_petugas" id="id_petugas" required>
     </div>
     <div class="form-item">
         <label for="username">username</label>
@@ -43,10 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text"name="password" id="password" required>
     </div>
     <button type="submit">Login</button>
-    <a href="register.php">Register</a>
-    <!-- <button type="submit" a href="admin.php">login sebagai admin</button> -->
-     <a href="admin.php">login admin klik di sini</a>
+
     </form>
-    <!-- <button type="submit" a href="admin.php">login sebagai admin</button> -->
 </body>
 </html>
