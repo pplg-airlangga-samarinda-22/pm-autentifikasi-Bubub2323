@@ -18,6 +18,7 @@
     <nav>
         <a href="index.php">Dashboard</a>
         <a href="logout.php">logout</a>
+        <a href="aduan.php">laporan aduan</a>
     </nav>
 </body>
 </html>
