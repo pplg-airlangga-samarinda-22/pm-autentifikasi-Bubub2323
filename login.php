@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button type="submit">Login</button>
     <a href="register.php">Register</a>
     <!-- <button type="submit" a href="admin.php">login sebagai admin</button> -->
-     <a href="admin.php">login admin klik di sini</a>
+     <a href="./admin/login.php">login admin klik di sini</a>
     </form>
     <!-- <button type="submit" a href="admin.php">login sebagai admin</button> -->
 </body>

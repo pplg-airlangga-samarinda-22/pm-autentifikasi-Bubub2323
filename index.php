@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once "koneksi.php";
+    require "koneksi.php";
     if (empty($_SESSION['nik'])) {
         header("location:login.php");
     }
