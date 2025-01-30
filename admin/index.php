@@ -18,8 +18,14 @@ if(empty($_SESSION['level'])){
         <a href="index.php">Dashboard</a>
         <a href="../PENGADUAN/pengaduan.php">Pengaduan</a>
         <a href="../masyarakat/masyarakat.php">masyarakat</a>
+        <?php 
+        if ($_SESSION['level'] == 'admin') {
+
+        ?>
         <a href="../petugas/petugas.php">Petugas</a>
-        <a href="laporan.php">laporan</a>
+     
+        <?php    } ?>
+        <a href="../PENGADUAN/laporan.php">laporan</a>
         <a href="logout.php">logout</a>
     </nav>
 </body>

@@ -33,7 +33,8 @@
                 <td><?= $item['tgl_pengaduan']; ?></td>
                 <td><?= $item['isi_laporan']; ?></td>
                 <td><?= ($item['status'] == '0')?'menunggu':(($item['status'] == 'proses')?'diproses':'selesai') ?></td>
-                <td><a href='href="edit.php?id=$item[id_pengaduan]'>Edit</a></td>
+                <td><a href='edit-aduan.php?id=<?=$item['id_pengaduan']?>'>edit</a></td>
+                <a href="index.php">Kembali</a>
             </tr>
             <?php    
                 }

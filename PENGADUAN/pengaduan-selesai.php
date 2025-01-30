@@ -20,10 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $status = 'selesai';
 
     //upadate pengaduan
-    $sql = "UPDATE pengaduan SET status=? WHERE id_pengaduan=?";
-    $row = $koneksi->execute_query($sql, [$id_pengaduan, $tanggal, $tanggapan, $id_petugas]);
+    $sql = "UPDATE pengaduan SET status = ? WHERE id_pengaduan = ?";
+    $koneksi->execute_query($sql, [$status, $id_pengaduan]);
 
-    header("location:pengaduan.php");
+    $sql = "INSERT INTO tanggapan (id_pengaduan, tgl_tanggapan, tanggapan, id_petugas) VALUES (?, ?, ?, ?)";
+    $koneksi->execute_query($sql, [$id_pengaduan, $tanggal, $tanggapan, $id_petugas]);
+
+    header("Location: pengaduan.php");
+    exit();
 }
 ?>
 

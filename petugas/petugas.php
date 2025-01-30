@@ -10,7 +10,7 @@ require "../koneksi.php";
 </head>
 <body>
     <h1>Data petugas</h1>
-    <a href="index.php">kembali</a> <br>
+    <a href="../admin/index.php">kembali</a> <br>
     <a href="petugas-form.php">Tambah petugas baru</a>
     <table>
     <thead>
@@ -44,6 +44,6 @@ require "../koneksi.php";
         ?>
     </tbody>
     </table>
-    <a href="index.php">kembali</a>
+    <a href="../index.php">kembali</a>
 </body>
 </html>
